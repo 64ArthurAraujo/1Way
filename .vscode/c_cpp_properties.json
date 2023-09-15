@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/miral",
+                "/usr/include/mircore",
+                "/usr/include/mircommon",
+                "/usr/include/freetype2",
+                "/usr/include/qt5/QtCore",
+                "/usr/include/qt5",
+                "/usr/include/qt5/QtGui",
+                "/usr/include/qt5/QtQml",
+                "/usr/include/qt5/QtQuick",
+                "/usr/include/qt5/QtQuick/5.15.10",
+                "/usr/include/qt5/QtQuick/5.15.10/QtQuick",
+                "/usr/include/qt5/QtQml/5.15.10",
+                "/usr/include/qt5/QtQml/5.15.10/QtQml",
+                "/usr/include/qt5/QtCore/5.15.10/QtCore/private",
+                "/usr/include/qt5/QtCore/5.15.10/QtCore",
+                "/usr/include/qt5/QtCore/5.15.10",
+                "/usr/include/qt5/QtGui/5.15.10/QtGui",
+                "/usr/include/qt5/QtGui/5.15.10",
+                "/usr/include/QtSvg"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}

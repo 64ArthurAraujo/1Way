@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "algorithm": "cpp",
+        "sstream": "cpp",
+        "qguiapplication": "cpp",
+        "qscopedpointer": "cpp",
+        "qquickview": "cpp",
+        "qqmlengine": "cpp",
+        "qqmlcontext": "cpp",
+        "initializer_list": "cpp",
+        "xcursor.h": "c",
+        "qdesktopservices": "cpp"
+    },
+    "copyrightInserter.holder": "Arthur Araujo",
+    "copyrightInserter.license": "gpl3",
+    "copyrightInserter.year": "2023"
+}
