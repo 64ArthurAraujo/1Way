@@ -9,7 +9,10 @@
         "qqmlcontext": "cpp",
         "initializer_list": "cpp",
         "xcursor.h": "c",
-        "qdesktopservices": "cpp"
+        "qdesktopservices": "cpp",
+        "qobject": "cpp",
+        "qabstractlistmodel": "cpp",
+        "qloggingcategory": "cpp"
     },
     "copyrightInserter.holder": "Arthur Araujo",
     "copyrightInserter.license": "gpl3",

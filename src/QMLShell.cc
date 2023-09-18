@@ -43,8 +43,9 @@ void QMLShell::setupQmlEngine()
 
     m_qmlEngine->setBaseUrl(QUrl::fromLocalFile("/home/arthur/repos/1way/qml/"));
 
+    m_qmlEngine->addImportPath(QStringLiteral("/home/arthur/repos/1way/build/plugins"));
+
     QObject::connect(m_qmlEngine, &QQmlEngine::quit, this, &QGuiApplication::quit);
-    QDesktopServices::openUrl(QStringLiteral("application:///glmark2-wayland.desktop"));
 }
 
 void QMLShell::onScreenAdded(QScreen *)

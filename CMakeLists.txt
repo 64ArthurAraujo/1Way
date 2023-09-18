@@ -23,12 +23,12 @@ find_package(Qt5Svg 5.6 REQUIRED)
 find_package(Qt5Network 5.6 REQUIRED)
 find_package(Qt5Xml 5.6 REQUIRED)
 
-
-add_subdirectory(qml)
-
 file(GLOB ONEWAY_SRC
     "src/*.h"
     "src/*.cc"
+
+    "src/WindowManager/*.h"
+    "src/WindowManager/*.cc"
 )
 
 add_executable(1way ${ONEWAY_SRC} ${QML_SRC})
@@ -49,6 +49,18 @@ target_include_directories(1way PRIVATE
     /usr/include/qt5/QtCore/5.15.10
     /usr/include/qt5/QtGui/5.15.10/QtGui
     /usr/include/qt5/QtGui/5.15.10
+    /usr/include/x86_64-linux-gnu/qt5/QtQuick/5.15.8/
+    /usr/include/x86_64-linux-gnu/qt5/QtQuick/5.15.8/QtQuick
+    /usr/include/x86_64-linux-gnu/qt5/QtQml/5.15.8/
+    /usr/include/x86_64-linux-gnu/qt5/QtQml/5.15.8/QtQml
+    /usr/include/x86_64-linux-gnu/qt5/QtCore/5.15.8/
+    /usr/include/x86_64-linux-gnu/qt5/QtCore/5.15.8/QtCore
+    /usr/include/x86_64-linux-gnu/qt5/QtGui/5.15.8/
+    /usr/include/x86_64-linux-gnu/qt5/QtGui/5.15.8/QtGui
+    /usr/include/unity/shell/application
+    /usr/include/lomiri/shell/application
+    /usr/include/qtmir/qtmir
+    /usr/include/mircore/mir/
 )
 
 target_link_libraries(1way 
@@ -65,6 +77,9 @@ target_link_libraries(1way
     Qt5::Xml
     ${MIRAL_LDFLAGS}
 )
+
+add_subdirectory(plugins)
+add_subdirectory(qml)
 
 install(PROGRAMS ${CMAKE_BINARY_DIR}/1way
     DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
