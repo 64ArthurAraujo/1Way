@@ -23,18 +23,20 @@ find_package(Qt5Svg 5.6 REQUIRED)
 find_package(Qt5Network 5.6 REQUIRED)
 find_package(Qt5Xml 5.6 REQUIRED)
 
+add_subdirectory(src/libunity8-private)
+add_subdirectory(plugins)
+add_subdirectory(qml)
+
 file(GLOB ONEWAY_SRC
     "src/*.h"
     "src/*.cc"
-
-    "src/WindowManager/*.h"
-    "src/WindowManager/*.cc"
 )
 
 add_executable(1way ${ONEWAY_SRC} ${QML_SRC})
 
 target_include_directories(1way PUBLIC SYSTEM ${MIRAL_INCLUDE_DIRS})
 target_include_directories(1way PRIVATE
+    /home/arthur/src/1Way/src/libunity8-private/
     /usr/include/qt5/QtCore
     /usr/include/qt5
     /usr/include/qt5/QtGui
@@ -59,8 +61,9 @@ target_include_directories(1way PRIVATE
     /usr/include/x86_64-linux-gnu/qt5/QtGui/5.15.8/QtGui
     /usr/include/unity/shell/application
     /usr/include/lomiri/shell/application
-    /usr/include/qtmir/qtmir
     /usr/include/mircore/mir/
+    /usr/include/qtmir/
+    /usr/include/miroil/
 )
 
 target_link_libraries(1way 
@@ -75,11 +78,11 @@ target_link_libraries(1way
     Qt5::Svg
     Qt5::Network
     Qt5::Xml
+    qtmirserver
+    miral
+    miroil
     ${MIRAL_LDFLAGS}
 )
-
-add_subdirectory(plugins)
-add_subdirectory(qml)
 
 install(PROGRAMS ${CMAKE_BINARY_DIR}/1way
     DESTINATION ${CMAKE_INSTALL_PREFIX}/bin

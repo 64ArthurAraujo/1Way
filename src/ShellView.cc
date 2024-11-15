@@ -12,7 +12,7 @@ ShellView::ShellView(QQmlEngine *engine) : QQuickView(engine, nullptr)
 {
     setResizeMode(QQuickView::SizeRootObjectToView);
     setColor("black");
-    setTitle(QStringLiteral("1Way Shell"));
+    setTitle(QStringLiteral("1Way Desktop"));
 
     connect(this, &QQuickView::statusChanged, this, [this]
             {
@@ -32,7 +32,7 @@ ShellView::ShellView(QQmlEngine *engine) : QQuickView(engine, nullptr)
                 QQuickItemPrivate::get(text)->anchors()->setFill(rect);
             } });
 
-    QUrl source("/home/arthur/repos/1way/qml/Shell.qml");
+    QUrl source("/home/arthur/src/1Way/qml/Shell.qml");
     setSource(source);
 
     connect(this, &QWindow::widthChanged, this, &ShellView::onWidthChanged);

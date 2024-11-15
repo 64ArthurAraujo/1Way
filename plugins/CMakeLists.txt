@@ -6,3 +6,5 @@ macro(add_unity8_plugin PLUGIN VERSION PATH)
 endmacro()
 
 add_subdirectory(Cursor)
+add_subdirectory(Utils)
+add_subdirectory(WindowManager)

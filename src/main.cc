@@ -16,12 +16,10 @@
  */
 
 #include "QMLShell.h"
-
 #include <QDesktopServices>
 
 int main(int argc, char const *argv[])
 {
-
     setenv("QT_QPA_PLATFORM", "mirserver", 1 /* overwrite */);
     qInfo("Using mirserver qt platform");
 

@@ -19,7 +19,7 @@ Rectangle {
         anchors.leftMargin: 10
         font.pixelSize: 13
 
-        text: "1Way Shell"
+        text: "1Way Desktop"
         color: "white"
     }
 }

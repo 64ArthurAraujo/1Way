@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Window 2.2
 import QtMir.Application 0.1
 import Cursor 1.1
+import WindowManager 1.0
 
 Item {
     id: root
@@ -47,8 +48,29 @@ Item {
         anchors { right: parent.right; bottom: parent.bottom }
         height: 30
         width: 80
-        text: "Quit 1Way"
+        text: "Quit"
         onClicked: Qt.quit()
     }
 
+    Item {
+        id: stages
+        objectName: "stages"
+        width: parent.width
+        height: parent.height
+
+        TopLevelWindowModel {
+            id: topLevelSurfaceList
+            objectName: "topLevelSurfaceList"
+            applicationManager: ApplicationManager // it's a singleton
+            surfaceManager: SurfaceManager
+        }
+
+        Stage {
+            id: stage
+            objectName: "stage"
+            anchors.fill: parent
+            applicationManager: ApplicationManager
+            topLevelSurfaceList: topLevelSurfaceList
+        }
+    }
 }
